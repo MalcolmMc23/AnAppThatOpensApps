@@ -6,7 +6,6 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
-
 import javax.swing.AbstractAction;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
@@ -30,8 +29,8 @@ public class GUI implements ActionListener, java.awt.event.ActionListener {
         frame = new JFrame();
         panel = new JPanel();
 
-        JButton chooseFile = new JButton(new AbstractAction("choose your Spotify file") { // choose a file for the
-                                                                                          // spotify button
+        // choose a file for the spotify button
+        JButton chooseFile = new JButton(new AbstractAction("choose your Spotify file") {
             @Override
             public void actionPerformed(ActionEvent e) {
                 clicks++;
@@ -42,7 +41,7 @@ public class GUI implements ActionListener, java.awt.event.ActionListener {
                 File selFile = fc.getSelectedFile();
 
                 fc.showSaveDialog(frame);
-                selFile = fc.getSelectedFile();
+                // selFile = fc.getSelectedFile();
                 fileName_S = FileUtils.readFileToString(selFile);
                 System.out.println(fileName_S);
 
